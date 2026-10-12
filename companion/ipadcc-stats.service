@@ -1,0 +1,13 @@
+[Unit]
+Description=iPad Control Center machine stats
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/ipa-sideloading/companion
+ExecStart=%h/ipa-sideloading/companion/.venv/bin/python server.py
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=default.target

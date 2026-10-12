@@ -10,6 +10,25 @@
 		A10000000000000000000011 /* HelloWorldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000002 /* HelloWorldApp.swift */; };
 		A10000000000000000000012 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000003 /* ContentView.swift */; };
 		A10000000000000000000013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000004 /* Assets.xcassets */; };
+		A10000000000000000000201 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000101 /* AppModel.swift */; };
+		A10000000000000000000202 /* GlassPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000102 /* GlassPanel.swift */; };
+		A10000000000000000000203 /* AlbumBackdrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000103 /* AlbumBackdrop.swift */; };
+		A10000000000000000000204 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000104 /* Palette.swift */; };
+		A10000000000000000000205 /* SpotifyAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000105 /* SpotifyAuth.swift */; };
+		A10000000000000000000206 /* NowPlayingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000106 /* NowPlayingStore.swift */; };
+		A10000000000000000000207 /* LRCParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000107 /* LRCParser.swift */; };
+		A10000000000000000000208 /* LyricsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000108 /* LyricsStore.swift */; };
+		A10000000000000000000209 /* CalendarStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000109 /* CalendarStore.swift */; };
+		A10000000000000000000210 /* StatsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000110 /* StatsStore.swift */; };
+		A10000000000000000000211 /* FocusTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000111 /* FocusTimer.swift */; };
+		A10000000000000000000212 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000112 /* DashboardView.swift */; };
+		A10000000000000000000213 /* ClockHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000113 /* ClockHeader.swift */; };
+		A10000000000000000000214 /* NowPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000114 /* NowPlayingView.swift */; };
+		A10000000000000000000215 /* LyricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000115 /* LyricsView.swift */; };
+		A10000000000000000000216 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000116 /* CalendarCell.swift */; };
+		A10000000000000000000217 /* StatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000117 /* StatsCell.swift */; };
+		A10000000000000000000218 /* FocusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000118 /* FocusCell.swift */; };
+		A10000000000000000000219 /* SettingsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000119 /* SettingsSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +36,26 @@
 		A10000000000000000000002 /* HelloWorldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWorldApp.swift; sourceTree = "<group>"; };
 		A10000000000000000000003 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A10000000000000000000004 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A10000000000000000000101 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		A10000000000000000000102 /* GlassPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassPanel.swift; sourceTree = "<group>"; };
+		A10000000000000000000103 /* AlbumBackdrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumBackdrop.swift; sourceTree = "<group>"; };
+		A10000000000000000000104 /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
+		A10000000000000000000105 /* SpotifyAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAuth.swift; sourceTree = "<group>"; };
+		A10000000000000000000106 /* NowPlayingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingStore.swift; sourceTree = "<group>"; };
+		A10000000000000000000107 /* LRCParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRCParser.swift; sourceTree = "<group>"; };
+		A10000000000000000000108 /* LyricsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsStore.swift; sourceTree = "<group>"; };
+		A10000000000000000000109 /* CalendarStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarStore.swift; sourceTree = "<group>"; };
+		A10000000000000000000110 /* StatsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsStore.swift; sourceTree = "<group>"; };
+		A10000000000000000000111 /* FocusTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusTimer.swift; sourceTree = "<group>"; };
+		A10000000000000000000112 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		A10000000000000000000113 /* ClockHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockHeader.swift; sourceTree = "<group>"; };
+		A10000000000000000000114 /* NowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingView.swift; sourceTree = "<group>"; };
+		A10000000000000000000115 /* LyricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsView.swift; sourceTree = "<group>"; };
+		A10000000000000000000116 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		A10000000000000000000117 /* StatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCell.swift; sourceTree = "<group>"; };
+		A10000000000000000000118 /* FocusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusCell.swift; sourceTree = "<group>"; };
+		A10000000000000000000119 /* SettingsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSheet.swift; sourceTree = "<group>"; };
+		A10000000000000000000120 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,9 +82,85 @@
 			children = (
 				A10000000000000000000002 /* HelloWorldApp.swift */,
 				A10000000000000000000003 /* ContentView.swift */,
+				A10000000000000000000101 /* AppModel.swift */,
+				A10000000000000000000301 /* Design */,
+				A10000000000000000000302 /* Spotify */,
+				A10000000000000000000303 /* Lyrics */,
+				A10000000000000000000304 /* Calendar */,
+				A10000000000000000000305 /* Stats */,
+				A10000000000000000000306 /* Focus */,
+				A10000000000000000000307 /* Views */,
 				A10000000000000000000004 /* Assets.xcassets */,
+				A10000000000000000000120 /* Info.plist */,
 			);
 			path = HelloWorld;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000301 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000102 /* GlassPanel.swift */,
+				A10000000000000000000103 /* AlbumBackdrop.swift */,
+				A10000000000000000000104 /* Palette.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000302 /* Spotify */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000105 /* SpotifyAuth.swift */,
+				A10000000000000000000106 /* NowPlayingStore.swift */,
+			);
+			path = Spotify;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000303 /* Lyrics */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000107 /* LRCParser.swift */,
+				A10000000000000000000108 /* LyricsStore.swift */,
+			);
+			path = Lyrics;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000304 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000109 /* CalendarStore.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000305 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000110 /* StatsStore.swift */,
+			);
+			path = Stats;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000306 /* Focus */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000111 /* FocusTimer.swift */,
+			);
+			path = Focus;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000307 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000112 /* DashboardView.swift */,
+				A10000000000000000000113 /* ClockHeader.swift */,
+				A10000000000000000000114 /* NowPlayingView.swift */,
+				A10000000000000000000115 /* LyricsView.swift */,
+				A10000000000000000000116 /* CalendarCell.swift */,
+				A10000000000000000000117 /* StatsCell.swift */,
+				A10000000000000000000118 /* FocusCell.swift */,
+				A10000000000000000000119 /* SettingsSheet.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A10000000000000000000033 /* Products */ = {
@@ -127,6 +242,25 @@
 			files = (
 				A10000000000000000000011 /* HelloWorldApp.swift in Sources */,
 				A10000000000000000000012 /* ContentView.swift in Sources */,
+				A10000000000000000000201 /* AppModel.swift in Sources */,
+				A10000000000000000000202 /* GlassPanel.swift in Sources */,
+				A10000000000000000000203 /* AlbumBackdrop.swift in Sources */,
+				A10000000000000000000204 /* Palette.swift in Sources */,
+				A10000000000000000000205 /* SpotifyAuth.swift in Sources */,
+				A10000000000000000000206 /* NowPlayingStore.swift in Sources */,
+				A10000000000000000000207 /* LRCParser.swift in Sources */,
+				A10000000000000000000208 /* LyricsStore.swift in Sources */,
+				A10000000000000000000209 /* CalendarStore.swift in Sources */,
+				A10000000000000000000210 /* StatsStore.swift in Sources */,
+				A10000000000000000000211 /* FocusTimer.swift in Sources */,
+				A10000000000000000000212 /* DashboardView.swift in Sources */,
+				A10000000000000000000213 /* ClockHeader.swift in Sources */,
+				A10000000000000000000214 /* NowPlayingView.swift in Sources */,
+				A10000000000000000000215 /* LyricsView.swift in Sources */,
+				A10000000000000000000216 /* CalendarCell.swift in Sources */,
+				A10000000000000000000217 /* StatsCell.swift in Sources */,
+				A10000000000000000000218 /* FocusCell.swift in Sources */,
+				A10000000000000000000219 /* SettingsSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,7 +319,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -242,7 +376,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -262,11 +396,16 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HelloWorld/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Control Center";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -278,7 +417,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -292,11 +431,16 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HelloWorld/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Control Center";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,7 +452,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
