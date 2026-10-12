@@ -11,7 +11,11 @@
 	<string>Control Center reads performance stats from your Ubuntu computer on this network.</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Control Center shows today's events.</string>
+	<key>NSCalendarsFullAccessUsageDescription</key>
+	<string>Control Center shows today's events.</string>
 	<key>NSRemindersUsageDescription</key>
+	<string>Control Center shows reminders that are due.</string>
+	<key>NSRemindersFullAccessUsageDescription</key>
 	<string>Control Center shows reminders that are due.</string>
 	<key>UIRequiresFullScreen</key>
 	<true/>

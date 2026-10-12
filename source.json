@@ -1,0 +1,24 @@
+{
+  "name": "Control Center",
+  "identifier": "com.example.ipadcc.source",
+  "apps": [
+    {
+      "name": "Control Center",
+      "bundleIdentifier": "com.example.HelloWorld",
+      "developerName": "vvasa",
+      "localizedDescription": "Always-on iPad dashboard for the clock, Spotify, the day, and an Ubuntu machine.",
+      "iconURL": "https://raw.githubusercontent.com/vvasa33/ipa-sideloading/main/icon.png",
+      "versions": [
+        {
+          "version": "1.0.1",
+          "buildVersion": "2",
+          "date": "2026-10-12",
+          "localizedDescription": "Stays open when asking for calendar and reminders access.",
+          "downloadURL": "https://raw.githubusercontent.com/vvasa33/ipa-sideloading/main/build/HelloWorld.ipa",
+          "size": 436725,
+          "minOSVersion": "16.0"
+        }
+      ]
+    }
+  ]
+}
