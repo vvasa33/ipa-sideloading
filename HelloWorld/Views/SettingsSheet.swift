@@ -3,12 +3,10 @@ import SwiftUI
 struct SettingsSheet: View {
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject private var settings: AppSettings
-    @EnvironmentObject private var auth: SpotifyAuth
-    @EnvironmentObject private var nowPlaying: NowPlayingStore
+    @EnvironmentObject private var remote: SpotifyRemote
     @FocusState private var focused: Field?
 
     private enum Field {
-        case client
         case host
         case port
     }
@@ -32,43 +30,24 @@ struct SettingsSheet: View {
                         Text("Spotify")
                             .font(.system(size: 20, weight: .semibold, design: .rounded))
                             .foregroundStyle(Color.white)
-                        fieldLabel("Client ID")
-                        TextField(
-                            "",
-                            text: $settings.spotifyClientID,
-                            prompt: Text("From the Spotify dashboard").foregroundStyle(Color.white.opacity(0.7))
-                        )
-                        .focused($focused, equals: .client)
-                        .textInputAutocapitalization(.never)
-                        .autocorrectionDisabled()
-                        .fieldChrome(focused: focused == .client)
-                        Text("Create an app in the Spotify developer dashboard. Set the redirect URI to ipadcc://callback.")
-                            .font(.system(size: 14, weight: .regular, design: .rounded))
-                            .foregroundStyle(Color.white.opacity(0.72))
-                            .fixedSize(horizontal: false, vertical: true)
-                        fieldLabel("Redirect URI")
-                        Text(SpotifyConfig.redirectURI)
-                            .font(.system(size: 15, weight: .medium, design: .monospaced))
-                            .foregroundStyle(Color.white)
-                            .textSelection(.enabled)
-                        Text(auth.isSignedIn ? "Signed in" : "Not signed in")
+                        Text(remote.isSignedIn ? "Signed in" : "Not signed in")
                             .font(.system(size: 15, weight: .medium, design: .rounded))
                             .foregroundStyle(Color.white.opacity(0.82))
                         SolidButton(
-                            title: auth.isAuthorizing ? "Waiting" : (auth.isSignedIn ? "Sign out" : "Sign in"),
-                            enabled: auth.isSignedIn || (!auth.isAuthorizing && !settings.trimmedClientID.isEmpty)
+                            title: remote.isAuthorizing ? "Waiting" : (remote.isSignedIn ? "Sign out" : "Sign in"),
+                            enabled: !remote.isAuthorizing
                         ) {
-                            if auth.isSignedIn {
-                                auth.signOut()
-                                nowPlaying.clear()
+                            if remote.isSignedIn {
+                                remote.signOut()
                             } else {
-                                auth.signIn()
+                                remote.signIn()
                             }
                         }
-                        if let error = auth.lastError {
+                        if let error = remote.lastError {
                             Text(error)
                                 .font(.system(size: 14, weight: .medium, design: .rounded))
                                 .foregroundStyle(Color(red: 1, green: 0.67, blue: 0.64))
+                                .fixedSize(horizontal: false, vertical: true)
                         }
                     }
 
@@ -80,7 +59,7 @@ struct SettingsSheet: View {
                         TextField(
                             "",
                             text: $settings.ubuntuHost,
-                            prompt: Text("192.168.1.20").foregroundStyle(Color.white.opacity(0.7))
+                            prompt: Text("192.168.1.20").foregroundColor(Color.white.opacity(0.7))
                         )
                         .focused($focused, equals: .host)
                         .textInputAutocapitalization(.never)
@@ -94,7 +73,7 @@ struct SettingsSheet: View {
                         TextField(
                             "",
                             text: $settings.ubuntuPort,
-                            prompt: Text("8765").foregroundStyle(Color.white.opacity(0.7))
+                            prompt: Text("8765").foregroundColor(Color.white.opacity(0.7))
                         )
                         .focused($focused, equals: .port)
                         .keyboardType(.numberPad)

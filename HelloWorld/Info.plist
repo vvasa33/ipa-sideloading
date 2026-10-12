@@ -15,6 +15,10 @@
 	<string>Control Center shows reminders that are due.</string>
 	<key>UIRequiresFullScreen</key>
 	<true/>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>spotify</string>
+	</array>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>

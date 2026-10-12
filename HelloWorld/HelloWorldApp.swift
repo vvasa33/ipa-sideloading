@@ -9,7 +9,7 @@ struct HelloWorldApp: App {
             ContentView()
                 .environment(model: model)
                 .onOpenURL { url in
-                    model.auth.handleCallback(url)
+                    model.remote.handleCallback(url)
                 }
         }
     }

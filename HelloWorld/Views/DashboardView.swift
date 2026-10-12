@@ -5,6 +5,7 @@ struct DashboardView: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.scenePhase) private var scenePhase
     @EnvironmentObject private var nowPlaying: NowPlayingStore
+    @EnvironmentObject private var remote: SpotifyRemote
     @EnvironmentObject private var lyrics: LyricsStore
     @EnvironmentObject private var calendar: CalendarStore
     @EnvironmentObject private var stats: StatsStore
@@ -16,9 +17,9 @@ struct DashboardView: View {
             AlbumBackdrop(image: nowPlaying.backdrop, token: nowPlaying.backdropToken)
             LinearGradient(
                 colors: [
-                    Color.black.opacity(0.62),
-                    Color.black.opacity(0.40),
-                    Color.black.opacity(0.55),
+                    Color.black.opacity(0.22),
+                    Color.black.opacity(0.04),
+                    Color.black.opacity(0.18),
                 ],
                 startPoint: .top,
                 endPoint: .bottom
@@ -36,20 +37,27 @@ struct DashboardView: View {
         .sheet(isPresented: $showSettings) {
             SettingsSheet()
         }
-        .task { await nowPlaying.run() }
         .task { await calendar.run() }
         .task { await stats.run() }
         .task { await focus.run() }
         .onAppear {
             UIApplication.shared.isIdleTimerDisabled = true
             lyrics.load(for: nowPlaying.track)
+            remote.connectIfPossible()
         }
         .onChange(of: nowPlaying.track?.id) { _ in
             lyrics.load(for: nowPlaying.track)
         }
         .onChange(of: scenePhase) { phase in
+            if phase == .background {
+                if !remote.isAuthorizing {
+                    remote.disconnect()
+                }
+                return
+            }
             guard phase == .active else { return }
             UIApplication.shared.isIdleTimerDisabled = true
+            remote.connectIfPossible()
             Task { await calendar.reload() }
         }
     }
@@ -62,9 +70,8 @@ struct DashboardView: View {
             }
             .frame(
                 maxWidth: .infinity,
-                minHeight: collapsed ? 0 : 80,
-                maxHeight: collapsed ? .infinity : 80,
-                alignment: .leading
+                maxHeight: collapsed ? .infinity : 124,
+                alignment: .bottomLeading
             )
 
             if !collapsed {

@@ -9,9 +9,9 @@ struct AlbumPalette {
     var tertiary: Color
 
     static let fallback = AlbumPalette(
-        primary: Color(red: 0.36, green: 0.49, blue: 0.56),
-        secondary: Color(red: 0.30, green: 0.42, blue: 0.40),
-        tertiary: Color(red: 0.50, green: 0.40, blue: 0.34)
+        primary: Color(red: 0.36, green: 0.38, blue: 0.92),
+        secondary: Color(red: 0.12, green: 0.62, blue: 0.58),
+        tertiary: Color(red: 0.93, green: 0.42, blue: 0.36)
     )
 }
 

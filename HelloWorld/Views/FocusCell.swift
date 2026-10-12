@@ -35,10 +35,13 @@ struct FocusCell: View {
         let fraction = focus.fraction(at: date)
         return ZStack {
             Circle()
-                .stroke(Color.white.opacity(0.18), lineWidth: 7)
+                .stroke(Color.white.opacity(0.28), lineWidth: 7)
             Circle()
-                .trim(from: 0, to: fraction)
-                .stroke(Color.white, style: StrokeStyle(lineWidth: 7, lineCap: .round))
+                .trim(from: 0, to: max(fraction, focus.phase == .idle ? 0.08 : fraction))
+                .stroke(
+                    nowPlaying.palette.tertiary,
+                    style: StrokeStyle(lineWidth: 7, lineCap: .round)
+                )
                 .rotationEffect(.degrees(-90))
             VStack(spacing: 2) {
                 if focus.phase == .idle {

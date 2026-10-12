@@ -4,11 +4,10 @@ enum Theme {
     /// Panels use 28. Buttons, fields, and artwork use 14.
     static let panelRadius: CGFloat = 28
     static let controlRadius: CGFloat = 14
-    static let ink = Color(red: 0.07, green: 0.08, blue: 0.10)
+    static let ink = Color(red: 0.08, green: 0.07, blue: 0.18)
 }
 
-/// Web approximation of Apple's Liquid Glass: material, a dark veil so text stays
-/// readable, a hairline refraction stroke, and a short top highlight.
+/// Translucent color over the backdrop. No stroke, so the panel does not read as a bordered box.
 struct GlassPanel<Content: View>: View {
     var tint: Color
     private let content: Content
@@ -24,39 +23,24 @@ struct GlassPanel<Content: View>: View {
         content
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background {
-                ZStack {
-                    if reduceTransparency {
-                        shape.fill(Color(red: 0.12, green: 0.13, blue: 0.15))
-                    } else {
+                if reduceTransparency {
+                    shape.fill(tint.opacity(0.88))
+                } else {
+                    ZStack {
                         shape.fill(.ultraThinMaterial)
+                        shape.fill(tint.opacity(0.46))
+                        shape.fill(
+                            LinearGradient(
+                                colors: [Color.white.opacity(0.16), Color.clear],
+                                startPoint: .top,
+                                endPoint: .center
+                            )
+                        )
                     }
-                    shape.fill(Color.black.opacity(0.58))
-                    shape.fill(tint.opacity(0.20))
                 }
             }
             .clipShape(shape)
-            .overlay {
-                shape.strokeBorder(
-                    LinearGradient(
-                        colors: [Color.white.opacity(0.38), Color.white.opacity(0.06)],
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    ),
-                    lineWidth: 1
-                )
-                .allowsHitTesting(false)
-            }
-            .overlay(alignment: .top) {
-                LinearGradient(
-                    colors: [Color.white.opacity(0.22), Color.clear],
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                .frame(height: 12)
-                .clipShape(shape)
-                .allowsHitTesting(false)
-            }
-            .shadow(color: tint.opacity(0.22), radius: 20, y: 12)
+            .shadow(color: tint.opacity(0.38), radius: 28, y: 14)
     }
 }
 

@@ -10,8 +10,8 @@ extension View {
     func environment(model: AppModel) -> some View {
         self
             .environmentObject(model.settings)
-            .environmentObject(model.auth)
             .environmentObject(model.nowPlaying)
+            .environmentObject(model.remote)
             .environmentObject(model.lyrics)
             .environmentObject(model.calendar)
             .environmentObject(model.stats)
@@ -21,10 +21,6 @@ extension View {
 
 @MainActor
 final class AppSettings: ObservableObject {
-    @Published var spotifyClientID: String {
-        didSet { UserDefaults.standard.set(spotifyClientID, forKey: Keys.clientID) }
-    }
-
     @Published var ubuntuHost: String {
         didSet { UserDefaults.standard.set(ubuntuHost, forKey: Keys.host) }
     }
@@ -35,13 +31,8 @@ final class AppSettings: ObservableObject {
 
     init() {
         let defaults = UserDefaults.standard
-        spotifyClientID = defaults.string(forKey: Keys.clientID) ?? ""
         ubuntuHost = defaults.string(forKey: Keys.host) ?? ""
         ubuntuPort = defaults.string(forKey: Keys.port) ?? "8765"
-    }
-
-    var trimmedClientID: String {
-        spotifyClientID.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
     var statsURL: URL? {
@@ -73,7 +64,6 @@ final class AppSettings: ObservableObject {
     }
 
     private enum Keys {
-        static let clientID = "ipadcc.spotifyClientID"
         static let host = "ipadcc.ubuntuHost"
         static let port = "ipadcc.ubuntuPort"
     }
@@ -82,8 +72,8 @@ final class AppSettings: ObservableObject {
 @MainActor
 final class AppModel: ObservableObject {
     let settings: AppSettings
-    let auth: SpotifyAuth
     let nowPlaying: NowPlayingStore
+    let remote: SpotifyRemote
     let lyrics: LyricsStore
     let calendar: CalendarStore
     let stats: StatsStore
@@ -91,10 +81,10 @@ final class AppModel: ObservableObject {
 
     init() {
         let settings = AppSettings()
-        let auth = SpotifyAuth(settings: settings)
         self.settings = settings
-        self.auth = auth
-        self.nowPlaying = NowPlayingStore(auth: auth)
+        let nowPlaying = NowPlayingStore()
+        self.nowPlaying = nowPlaying
+        self.remote = SpotifyRemote(nowPlaying: nowPlaying)
         self.lyrics = LyricsStore()
         self.calendar = CalendarStore()
         self.stats = StatsStore(settings: settings)
